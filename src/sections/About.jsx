@@ -89,11 +89,17 @@ export default function About() {
               >
                 Get in Touch
               </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-green-900 text-white px-5 py-3 hover:bg-blue-600 transition"
+                aria-label="Get in touch"
+              >
+               My Qualification 
+              </a>
             </div>
           </div>
         </motion.div>
 
-        {/* Body copy only — removed skills chip grid */}
         <div className="grid md:grid-cols-1">
           <motion.div
             className="text-center md:text-left"

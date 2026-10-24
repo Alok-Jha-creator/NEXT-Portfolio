@@ -1,21 +1,11 @@
 "use client";
-
-// Importing React's useState hook for managing component state
 import { useState } from "react";
-
-// Importing motion component from Framer Motion for animations
 import { motion } from "framer-motion";
-
-// Importing EmailJS SDK
 import emailjs from "@emailjs/browser";
-
-// Importing the contact image asset
 import Image from "next/image";
 import Astra from "../assets/Astra.png";
 
 const MotionImage = motion.create(Image);
-
-// Reading EmailJS credentials from environment variables (Next.js)
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY;
@@ -79,18 +69,15 @@ export default function Contact() {
       setStatus("success");
       setFormData({name: "",email: "",service: "",budget: "",idea: ""});
     } catch (err) {
-      console.error("EmailJS Error:", err);
-      setStatus("error");
+      console.error("EmailJS Error:", err?.status, err?.text || err);
+  setStatus("error");
     }
   };
 
   return (
     <section
       id="contact" className="w-full min-h-screen relative bg-black overflow-hidden text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
-      
-      {/* Contact Section Content */}
       <div className="relative z-10 w-full flex flex-col md:flex-row items-center gap-10">
-        {/* Left Animated Image Section */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -106,7 +93,6 @@ export default function Contact() {
           />
         </motion.div>
 
-        {/* Right Side Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -155,8 +141,6 @@ export default function Contact() {
                 <p className="text-red-500 text-xs">{errors.email}</p>
               )}
             </div>
-
-            {/* Service dropdown */}
             <div className="flex flex-col">
               <label className="mb-1">
                 Service Needed <span className="text-red-500">*</span>
@@ -185,14 +169,11 @@ export default function Contact() {
                 <p className="text-red-500 text-xs">{errors.service}</p>
               )}
             </div>
-
-            {/* Budget field */}
             {formData.service && formData.service !== "other" && (
               <div className="flex flex-col">
                 <label className="mb-1">
                   Budget <span className="text-red-500">*</span>
                 </label>
-
                 <input
                   type="text"
                   name="budget"
@@ -203,19 +184,15 @@ export default function Contact() {
                     errors.budget ? "border-red-500" : "border-gray-500"
                   } text-white focus:outline-none focus:border-blue-500`}
                 />
-
                 {errors.budget && (
                   <p className="text-red-500 text-xs">{errors.budget}</p>
                 )}
               </div>
             )}
-
-            {/* Idea textarea */}
             <div className="flex flex-col">
               <label className="mb-1">
                 Idea <span className="text-red-500">*</span>
               </label>
-
               <textarea
                 name="idea"
                 rows={5}
@@ -226,13 +203,10 @@ export default function Contact() {
                   errors.idea ? "border-red-500" : "border-gray-500"
                 } text-white focus:outline-none focus:border-blue-500`}
               />
-
               {errors.idea && (
                 <p className="text-red-500 text-xs">{errors.idea}</p>
               )}
             </div>
-
-            {/* Status message */}
             {status && (
               <p
                 className={`text-sm ${
@@ -250,8 +224,6 @@ export default function Contact() {
                   : "Something went wrong ❌"}
               </p>
             )}
-
-            {/* Submit button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
