@@ -42,6 +42,16 @@ const qualifications = [
           "Software Engineering",
         ],
       },
+      {
+        name: "Semester 4",
+        subjects: [
+          "Database Management System",
+          "Probablity Statistics",
+          "Operating System",
+          "Computer Architechure and Organization",
+          "JAVA Programming"
+        ],
+      },
       // Aru semester haru yestai thap
     ],
   },
@@ -153,7 +163,6 @@ export default function Qualification() {
                   </div>
                 </div>
 
-                {/* Expandable subjects */}
                 <AnimatePresence initial={false}>
                   {hasMore && isOpen && (
                     <motion.div
