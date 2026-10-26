@@ -51,6 +51,15 @@ const qualifications = [
           "Computer Architechure and Organization",
           "JAVA Programming"
         ],
+      },{
+        name: "Semester 5",
+        subjects: [
+          "Web Technology",
+          "Internet of things",
+          "Cyber Security",
+          "Research Methodology",
+          "JAVA Programming"
+        ],
       },
       // Aru semester haru yestai thap
     ],
