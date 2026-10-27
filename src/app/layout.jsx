@@ -1,5 +1,8 @@
-import { Poppins, Roboto } from "next/font/google";
+import { Poppins, Roboto, Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,7 +31,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${roboto.variable}`}>
+    <html lang="en" className={cn(poppins.variable, roboto.variable, "font-sans", geist.variable)}>
       <body>{children}</body>
     </html>
   );
