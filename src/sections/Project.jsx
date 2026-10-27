@@ -111,7 +111,6 @@ function ProjectCard({ project, index }) {
         />
       </div>
 
-      {/* Content: hamesha dekhincha */}
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <p
           className="mb-1 text-xs font-semibold uppercase tracking-widest"
