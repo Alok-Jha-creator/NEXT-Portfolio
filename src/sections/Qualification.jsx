@@ -27,6 +27,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import WaveBackground from "@/components/WaveBackground";
 
 /* ---------------------------------------------------------------
    DATA
@@ -148,9 +149,6 @@ const quickFacts = [
   { label: "Focus", value: "MERN · Networking" },
 ];
 
-/* ---------------------------------------------------------------
-   ANIMATION HELPERS
----------------------------------------------------------------- */
 const EASE = [0.22, 1, 0.36, 1]; // smooth "ease-out-expo" jasto
 
 const timelineItem = {
@@ -191,9 +189,6 @@ const semesterCard = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE } },
 };
 
-/* ---------------------------------------------------------------
-   COMPONENT
----------------------------------------------------------------- */
 export default function Qualification() {
   const reduce = useReducedMotion();
 
@@ -216,13 +211,24 @@ export default function Qualification() {
       id="qualification"
       className="relative overflow-hidden px-6 py-24 text-white md:px-12 lg:px-20"
     >
+      {/* wave lines: mathi ko header bhaag ma matra, tala tira halka fade hunchha */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-130"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 50%, transparent)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent)",
+        }}
+      >
+        <WaveBackground lines={26} amplitude={0.14} focusX={0.5} />
+      </div>
+
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 h-80 w-160 -translate-x-1/2 rounded-full bg-teal-500/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl">
-        {/* ---------- Header ---------- */}
         <motion.header
           initial={reduce ? false : "hidden"}
           animate="show"
@@ -238,7 +244,7 @@ export default function Qualification() {
 
           <motion.p
             variants={rise}
-            className="mx-auto mt-4 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base"
+            className="mx-auto mt-2 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base"
           >
             Bachelor of Information Technology, focused on software
             development, databases, and networking, with hands-on training in
@@ -250,12 +256,12 @@ export default function Qualification() {
               hidden: { scaleX: 0 },
               show: { scaleX: 1, transition: { duration: 0.8, ease: EASE } },
             }}
-            className="mx-auto mt-6 h-px w-24 bg-teal-400"
+            className="mx-auto mt-4 h-px w-24 bg-teal-400"
           />
 
           <motion.div
             variants={rise}
-            className="mt-8 flex flex-wrap justify-center gap-3"
+            className="mt-4 flex flex-wrap justify-center gap-3"
           >
             {quickFacts.map((f) => (
               <div
@@ -356,21 +362,17 @@ export default function Qualification() {
                             )}
 
                             {hasMore && (
-                              <Accordion
-                                type="single"
-                                collapsible
-                                defaultValue="subjects"
-                              >
+                              <Accordion type="single" collapsible>
                                 <AccordionItem
                                   value="subjects"
                                   className="border-none"
                                 >
                                   <AccordionTrigger className="group mt-5 w-auto flex-none items-center gap-2 rounded-full border border-white/10 bg-[#161616] px-4 py-2 text-sm font-medium text-white hover:border-teal-400/50 hover:no-underline focus-visible:ring-teal-400/50">
                                     <span className="group-data-[state=open]:hidden">
-                                      View subjects
+                                      View more
                                     </span>
                                     <span className="hidden group-data-[state=open]:inline">
-                                      Hide subjects
+                                      View less
                                     </span>
                                   </AccordionTrigger>
 

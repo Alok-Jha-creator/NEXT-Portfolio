@@ -12,10 +12,10 @@ export default function IntroAnimation({ onFinish }) {
   const [visible, setVisible] = React.useState(true);
   useEffect(() => {
     if (index < greetings.length - 1) {
-      const id = setInterval(() => setIndex((i) => i + 1), 500);
+      const id = setInterval(() => setIndex((i) => i + 1), 200);
       return () => clearInterval(id);
     } else {
-      const t = setTimeout(() => setVisible(false), 500);
+      const t = setTimeout(() => setVisible(false), 800);
       return () => clearTimeout(t);
     }
   }, [index, greetings.length]);
@@ -23,7 +23,7 @@ export default function IntroAnimation({ onFinish }) {
     <AnimatePresence onExitComplete={onFinish}>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white overflow-hidden"
+          className="fixed inset-0 z-9999 flex items-center justify-center bg-black text-white overflow-hidden"
           initial={{ y: 0 }}
           exit={{
             y: "-100%",

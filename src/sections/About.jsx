@@ -76,7 +76,7 @@ export default function About() {
             {/* CTAs */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
               <a
-                href="#projects"
+                href="/projects"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-black font-semibold px-5 py-3 hover:bg-gray-200 transition"
                 aria-label="View my projects"
               >

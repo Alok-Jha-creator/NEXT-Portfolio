@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Navbar from "./Navbar";
 import About from "../sections/About";
@@ -10,6 +9,7 @@ import CustomCursior from "./CustomCursior";
 import IntroAnimation from "./IntroAnimation";
 import Skills from "../sections/Skill";
 
+
 export default function App() {
   const [introDone, setIntroDone] = useState(false);
 
@@ -17,7 +17,7 @@ export default function App() {
     <div className="relative gradient text-white bg-black min-h-screen">
       {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
       <CustomCursior />
-      <Navbar />
+      {introDone && <Navbar />}
       <Home />
       <About />
       <Skills />

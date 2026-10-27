@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import avatar from "../assets/avator.png";
 import { FaLinkedinIn, FaGithub, FaFacebook } from "react-icons/fa6";
+import WaveBackground from "@/components/WaveBackground";
 
 const MotionImage = motion.create(Image);
 const MotionLink = motion.create(Link);
@@ -90,6 +91,9 @@ const Home = React.forwardRef((props, ref) => {
       className="h-screen w-full relative overflow-hidden bg-black"
     >
       <div className="absolute inset-0 pointer-events-none">
+        {/* wave lines: sabai bhanda talo layer */}
+        <WaveBackground />
+
         <motion.div
           className="absolute -top-32 -left-32 w-[70vw] sm:w-[50vw] md:w-[40vw]
             h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-125 max-h-125
