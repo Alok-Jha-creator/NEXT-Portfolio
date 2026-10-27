@@ -143,7 +143,7 @@ const trainings = [
 ];
 
 const quickFacts = [
-  { label: "Degree", value: "BIT · 8 Semesters" },
+  { label: "Degree", value: "BIT · Completed" },
   { label: "Trainings", value: `${trainings.length} completed` },
   { label: "Focus", value: "MERN · Networking" },
 ];
