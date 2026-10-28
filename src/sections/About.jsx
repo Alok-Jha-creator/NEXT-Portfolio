@@ -73,7 +73,6 @@ export default function About() {
               ))}
             </div>
 
-            {/* CTAs */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
               <a
                 href="/projects"
