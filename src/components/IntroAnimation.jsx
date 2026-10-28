@@ -15,7 +15,7 @@ export default function IntroAnimation({ onFinish }) {
       const id = setInterval(() => setIndex((i) => i + 1), 200);
       return () => clearInterval(id);
     } else {
-      const t = setTimeout(() => setVisible(false), 800);
+      const t = setTimeout(() => setVisible(false), 700);
       return () => clearTimeout(t);
     }
   }, [index, greetings.length]);

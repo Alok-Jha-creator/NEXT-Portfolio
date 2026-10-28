@@ -281,7 +281,7 @@ export default function Qualification() {
             className="mx-auto mt-2 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base"
           >
             Bachelor of Information Technology, focused on software
-            development, databases, and networking, with hands-on training in
+            development,Web Devlopment, databases, and networking, with hands-on training in
             MERN Stack, CCNA, Business Analysis, and Ethical Hacking.
           </motion.p>
 

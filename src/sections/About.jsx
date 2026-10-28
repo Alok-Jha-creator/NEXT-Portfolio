@@ -82,7 +82,7 @@ export default function About() {
                 View Projects
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white px-5 py-3 hover:bg-white/20 transition"
                 aria-label="Get in touch"
               >

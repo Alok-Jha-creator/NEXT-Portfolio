@@ -3,13 +3,6 @@
 import { useEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
 
-/* ---------------------------------------------------------------
-   Flowing wave lines background (canvas)
-   Tweak garna sakine kura:
-   - lines     : kati ota line (badi = ghano, tara bhari)
-   - amplitude : wave kati uchai samma (0.16 = screen height ko 16%)
-   - focusX    : wave kun thau ma sabai bhanda ghano (0 = left, 1 = right)
----------------------------------------------------------------- */
 export default function WaveBackground({
   lines = 38,
   amplitude = 0.16,

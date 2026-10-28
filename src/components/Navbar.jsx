@@ -12,17 +12,14 @@ import {
   useSpring,
 } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
-
-
 const navItems = [
   { label: "Home", href: "/", id: "home" },
   { label: "About", href: "/#about", id: "about" },
   { label: "Skills", href: "/#skills", id: "skills" },
   { label: "Projects", href: "/projects" },
   { label: "Qualification", href: "/qualification" },
-  { label: "Contact", href: "/#contact", id: "contact" },
+  { label: "Contact", href: "/contact", id: "contact" },
 ];
 
 const contactItem = navItems.find((i) => i.id === "contact");
@@ -49,7 +46,6 @@ export default function Navbar() {
   const [hovered, setHovered] = useState(null);
   const [activeId, setActiveId] = useState("home");
 
-  /* ---------- scroll: background, hide/show, progress line ---------- */
   const { scrollY, scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, {
     stiffness: 120,
@@ -60,11 +56,9 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prev = scrollY.getPrevious() ?? 0;
     setScrolled(latest > 20);
-    // tala scroll garda lukchha, mathi scroll garda pheri aaucha
     setHidden(!reduce && latest > prev && latest > 160 && !open);
   });
 
-  /* ---------- scroll spy (home page ma kun section dekhiyo) ---------- */
   useEffect(() => {
     if (pathname !== "/") return;
     const els = navItems
@@ -161,7 +155,6 @@ export default function Navbar() {
               </span>
             </Link>
 
-            {/* ---------- desktop links ---------- */}
             <ul
               className="hidden items-center gap-0.5 lg:flex"
               onMouseLeave={() => setHovered(null)}
@@ -212,7 +205,6 @@ export default function Navbar() {
               })}
             </ul>
 
-            {/* ---------- right side ---------- */}
             <div className="flex items-center gap-2">
               <motion.div
                 className="hidden sm:block"
@@ -235,7 +227,6 @@ export default function Navbar() {
                 </Button>
               </motion.div>
 
-              {/* hamburger (lg bhanda sano screen ma) */}
               <Button
                 type="button"
                 variant="ghost"
@@ -261,7 +252,6 @@ export default function Navbar() {
               </Button>
             </div>
 
-            {/* scroll progress line, nav ko tala */}
             <motion.div
               aria-hidden
               style={{ scaleX: progress, opacity: scrolled ? 1 : 0 }}
@@ -269,7 +259,6 @@ export default function Navbar() {
             />
           </nav>
 
-          {/* ================= MOBILE MENU ================= */}
           <AnimatePresence>
             {open && (
               <motion.div
