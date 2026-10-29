@@ -17,14 +17,15 @@ import {
 import online from "../assets/online.png";
 import image1 from "../assets/image.png";
 import room from "../assets/room.png";
-import port from "../assets/port.png";
+import bank from "../assets/bank.png"
 import pro from "../assets/pro.png";
+import quiz from "../assets/quiz.png"
 
 const projects = [
   {
     slug: "snapcart",
     title: "Snapcart",
-    subtitle: "Full-Stack Grocery App",
+    subtitle: "Full-Stack Grocery E-Commerce App",
     description:
       "A full-stack grocery delivery platform with separate dashboards for users, admins and delivery partners.",
     highlights: [
@@ -85,21 +86,47 @@ const projects = [
     tags: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator",
   },
-  {
-    slug: "portfolio",
-    title: "Portfolio Website",
-    subtitle: "Frontend Project",
-    description:
-      "Personal developer portfolio with smooth animations and a fully responsive design.",
-    highlights: [
-      "Smooth animations",
-      "Particle backgrounds",
-      "Fully responsive design",
-    ],
-    image: port,
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/Alok-Jha-creator",
-  },
+{
+  slug: "bank-management-system",
+  title: "Bank Management System",
+  subtitle: "DESKTOP APPLICATION",
+  description:
+    "A console-based Bank Management System developed using C++ that allows administrators to manage bank accounts, handle deposits and withdrawals, check account balances, modify account details, and maintain customer records using binary file handling.",
+  highlights: [
+    "Create and manage bank accounts",
+    "Deposit and withdraw money",
+    "Balance enquiry and account holder list",
+    "Modify and delete bank accounts",
+    "Admin login authentication",
+    "Customer information validation",
+    "Binary file handling for data storage"
+  ],
+  image: bank,
+  tags: ["C++", "OOP", "File Handling", "Data Validation"],
+  github: "https://github.com/Alok-Jha-creator",
+},
+{
+  slug: "c-program-quiz-game",
+  title: "C Program Quiz Game",
+  subtitle: "CONSOLE APPLICATION",
+  description:
+    "An interactive quiz game developed using C programming. It features a warmup round and a challenge round where players answer multiple-choice questions, earn virtual prize money, and compete for the highest score.",
+  highlights: [
+    "Interactive multiple-choice quiz",
+    "Player name registration",
+    "Warmup and challenge rounds",
+    "Instant correct and incorrect answer feedback",
+    "Virtual prize money and score calculation",
+    "Highest score tracking",
+    "Reset score functionality",
+    "Built-in help and game instructions"
+  ],
+  image: quiz,
+  tags: ["C", "Programming", "Console Application", "File Handling"],
+  github: "https://github.com/Alok-Jha-creator",
+},
+
+
 ];
 
 /* ---------------------------------------------------------------

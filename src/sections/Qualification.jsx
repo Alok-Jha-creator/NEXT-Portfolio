@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef } from "react";
 import {
   motion,
@@ -29,13 +28,10 @@ import {
 } from "@/components/ui/accordion";
 import WaveBackground from "@/components/WaveBackground";
 
-/* ---------------------------------------------------------------
-   DATA
----------------------------------------------------------------- */
 const education = [
   {
     title: "Bachelor of Information Technology (BIT)",
-    institution: "Aryan School of Engineering and Management",
+    institution: "Purbanchal University | Aryan College",
     duration: "2021 – 2026",
     note: "8 Semesters",
     status: "Completed",
@@ -133,6 +129,7 @@ const education = [
   {
     title: "Higher Secondary (+2 Science / SLC)",
     institution: "DAV Shushil Kedia College",
+    institution: "Studied physics, chemistry, and mathematics with a strong emphasis on problem-solving and analytical skills.",
     duration: "2018 – 2020",
     status: "Completed",
     icon: Award,
@@ -183,8 +180,7 @@ const quickFacts = [
   { label: "Focus", value: "MERN · Networking" },
 ];
 
-const EASE = [0.22, 1, 0.36, 1]; // smooth "ease-out-expo" jasto
-
+const EASE = [0.22, 1, 0.36, 1]; 
 const timelineItem = {
   hidden: { opacity: 0, y: 28 },
   show: {
@@ -193,7 +189,6 @@ const timelineItem = {
     transition: { duration: 0.7, ease: EASE },
   },
 };
-
 const nodePop = {
   hidden: { scale: 0.5, opacity: 0 },
   show: {
@@ -202,17 +197,14 @@ const nodePop = {
     transition: { type: "spring", stiffness: 260, damping: 18, delay: 0.1 },
   },
 };
-
 const listStagger = {
   hidden: {},
   show: { transition: { staggerChildren: 0.1 } },
 };
-
 const rise = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
 };
-
 const semesterStagger = {
   hidden: {},
   show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
@@ -225,8 +217,6 @@ const semesterCard = {
 
 export default function Qualification() {
   const reduce = useReducedMotion();
-
-  // Scroll garda timeline ko teal line smooth tarika le bharinchha
   const listRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: listRef,
@@ -237,15 +227,12 @@ export default function Qualification() {
     damping: 28,
     restDelta: 0.001,
   });
-
   const vp = { once: true, margin: "-80px" };
-
   return (
     <section
       id="qualification"
       className="relative overflow-hidden px-6 py-24 text-white md:px-12 lg:px-20"
     >
-      {/* wave lines: mathi ko header bhaag ma matra, tala tira halka fade hunchha */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-130"
@@ -292,7 +279,6 @@ export default function Qualification() {
             }}
             className="mx-auto mt-4 h-px w-24 bg-teal-400"
           />
-
           <motion.div
             variants={rise}
             className="mt-4 flex flex-wrap justify-center gap-3"
@@ -312,17 +298,14 @@ export default function Qualification() {
         </motion.header>
 
         <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-14">
-          {/* ---------- Education timeline ---------- */}
           <div>
             <h3 className="mb-8 text-xl font-semibold text-white">Education</h3>
 
             <div ref={listRef} className="relative pl-12 sm:pl-14">
-              {/* background track */}
               <div
                 aria-hidden
                 className="absolute bottom-0 left-[1.1rem] top-2 w-px bg-white/10 sm:left-[1.35rem]"
               />
-              {/* scroll-linked teal progress line */}
               <motion.div
                 aria-hidden
                 style={{ scaleY: reduce ? 1 : progress, originY: 0 }}
@@ -343,7 +326,6 @@ export default function Qualification() {
                       variants={timelineItem}
                       className="relative"
                     >
-                      {/* node */}
                       <motion.span
                         variants={nodePop}
                         className={`absolute -left-12 top-5 flex h-9 w-9 items-center justify-center rounded-full border bg-black sm:-left-14 sm:h-11 sm:w-11 ${
@@ -389,12 +371,12 @@ export default function Qualification() {
                             <p className="mt-1.5 text-sm text-zinc-400">
                               {item.institution}
                             </p>
+                            
                             {item.note && (
                               <p className="mt-1 text-sm text-zinc-500">
                                 {item.note}
                               </p>
                             )}
-
                             {hasMore && (
                               <Accordion type="single" collapsible>
                                 <AccordionItem
@@ -454,7 +436,6 @@ export default function Qualification() {
             </div>
           </div>
 
-          {/* ---------- Training ---------- */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <h3 className="mb-8 text-xl font-semibold text-white">
               Training &amp; Courses
