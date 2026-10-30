@@ -255,9 +255,11 @@ const Home = React.forwardRef((props, ref) => {
                 </motion.span>
               </MotionLink>
 
+              {/* My Resume: ab naye tab me khulega (pehle dikhega), download wahan se kar sakte ho */}
               <motion.a
                 href="/Resume.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative inline-flex items-center gap-2 px-7 py-3 rounded-full
                   text-base font-bold text-white overflow-hidden select-none
                   border border-white/20 bg-white/5 backdrop-blur-sm"
@@ -279,10 +281,10 @@ const Home = React.forwardRef((props, ref) => {
                 <span className="relative z-10">My Resume</span>
                 <motion.span
                   className="relative z-10 text-sm"
-                  animate={{ y: [0, 2, 0] }}
+                  animate={{ x: [0, 2, 0], y: [0, -2, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  ↓
+                  ↗
                 </motion.span>
               </motion.a>
             </motion.div>
