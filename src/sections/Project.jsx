@@ -20,6 +20,7 @@ import room from "../assets/room.png";
 import bank from "../assets/bank.png"
 import pro from "../assets/pro.png";
 import quiz from "../assets/quiz.png"
+import back from "../assets/back.png"
 
 const projects = [
   {
@@ -123,6 +124,35 @@ const projects = [
   ],
   image: quiz,
   tags: ["C", "Programming", "Console Application", "File Handling"],
+  github: "https://github.com/Alok-Jha-creator",
+},
+{
+  slug: "ecommerce-backend-api",
+  title: "E-commerce Backend API",
+  subtitle: "BACKEND DEVELOPMENT",
+  description:
+    "A backend-focused e-commerce project built with Node.js and Express.js. It uses MongoDB with Mongoose and PostgreSQL with Sequelize for database operations, JWT for authentication, bcryptjs for password hashing, Cloudinary for image management, Joi for data validation, and Nodemailer for email services.",
+  highlights: [
+    "RESTful API development using Express.js",
+    "JWT-based authentication support",
+    "Password hashing using bcryptjs",
+    "Database integration with MongoDB and PostgreSQL",
+    "Data validation using Joi",
+    "Image upload and management using Cloudinary and Multer",
+    "Email services using Nodemailer",
+    "Environment variable configuration using dotenv"
+  ],
+  image: back,
+  tags: [
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose",
+    "PostgreSQL",
+    "Sequelize",
+    "JWT",
+    "Cloudinary"
+  ],
   github: "https://github.com/Alok-Jha-creator",
 },
 
