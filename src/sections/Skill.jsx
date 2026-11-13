@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 
-// ── All your actual skills as shields.io badge URLs ───────────────────────────
 const skills = [
   { name: "JavaScript",    url: "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" },
   { name: "C++",           url: "https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" },
