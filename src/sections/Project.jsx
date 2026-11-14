@@ -21,13 +21,6 @@ import bank from "../assets/bank.png"
 import pro from "../assets/pro.png";
 import quiz from "../assets/quiz.png"
 import back from "../assets/back.png"
-
-/* ---------------------------------------------------------------
-   TODO: har project ka asli GitHub repo link `github` me daalo
-   (abhi zyadatar projects profile link par ja rahe hain), aur
-   deploy hone par `live` link add karo. `status: "in-progress"`
-   wala badge tile par dikhta hai.
----------------------------------------------------------------- */
 const projects = [
   {
     slug: "snapcart",
@@ -170,9 +163,6 @@ const projects = [
 
 ];
 
-/* ---------------------------------------------------------------
-   SMALL PIECES
----------------------------------------------------------------- */
 const GithubIcon = ({ className = "h-4 w-4" }) => (
   <svg viewBox="0 0 24 24" className={`${className} fill-current`} aria-hidden="true">
     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
@@ -276,7 +266,6 @@ function ProjectTile({ project, index, onOpen }) {
   );
 }
 
-/* grid pura bharna: 6 aun tile GitHub ko lagi */
 function GithubTile() {
   const reduce = useReducedMotion();
 
@@ -432,14 +421,12 @@ export default function Projects() {
       aria-label="Projects"
       className="relative overflow-hidden bg-black px-6 py-24 text-white md:px-12 lg:px-20"
     >
-      {/* background glow, homepage jastai teal + purple */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-0 h-80 w-160 -translate-x-1/2 rounded-full bg-teal-500/10 blur-3xl" />
         <div className="absolute -right-24 bottom-20 h-96 w-96 rounded-full bg-[#302b63]/30 blur-[120px]" />
       </div>
 
       <div className="relative mx-auto max-w-5xl">
-        {/* ---------- Header ---------- */}
         <motion.header
           initial={reduce ? false : "hidden"}
           animate="show"
@@ -470,7 +457,6 @@ export default function Projects() {
           />
         </motion.header>
 
-        {/* ---------- Gallery ---------- */}
         <motion.div
           initial={reduce ? false : "hidden"}
           whileInView="show"
