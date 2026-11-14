@@ -22,6 +22,12 @@ import pro from "../assets/pro.png";
 import quiz from "../assets/quiz.png"
 import back from "../assets/back.png"
 
+/* ---------------------------------------------------------------
+   TODO: har project ka asli GitHub repo link `github` me daalo
+   (abhi zyadatar projects profile link par ja rahe hain), aur
+   deploy hone par `live` link add karo. `status: "in-progress"`
+   wala badge tile par dikhta hai.
+---------------------------------------------------------------- */
 const projects = [
   {
     slug: "snapcart",
@@ -35,25 +41,29 @@ const projects = [
       "Cart and checkout",
       "eSewa online payments",
       "Order management and delivery request broadcasting",
+      "Map-based delivery location with Leaflet",
     ],
     image: pro,
-    tags: ["Next.js", "MongoDB", "NextAuth", "Redux", "Socket.io", "Cloudinary", "Tailwind CSS"],
+    tags: ["Next.js", "TypeScript", "MongoDB", "NextAuth", "Redux Toolkit", "Socket.io", "eSewa", "Leaflet", "Cloudinary", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator/snapcart",
     live: "https://snapcart-pied-gamma.vercel.app/",
   },
   {
-    slug: "room-finder",
-    title: "Room Finder App",
-    subtitle: "Full Stack Web App",
+    slug: "roomsewa",
+    title: "RoomSewa",
+    subtitle: "Room & Property Rental Platform",
     description:
-      "A room rental platform connecting owners who list rooms with tenants who search for them.",
+      "A MERN rental platform for Nepal with renter, owner and admin roles, connecting owners who list rooms with tenants who search for them.",
     highlights: [
+      "Three roles: renter, owner and admin",
       "Owners list rooms with photos and prices",
-      "Tenants search, filter and contact owners directly",
-      "Secure JWT authentication",
+      "Property search with filters, favorites and booking management",
+      "Real-time renter-owner chat with Socket.io",
+      "Secure JWT authentication and 19 REST API endpoints",
+      "Admin dashboard to manage the platform",
     ],
     image: room,
-    tags: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+    tags: ["React", "Vite", "Node.js", "Express", "MongoDB", "Socket.io", "JWT", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator",
   },
   {
@@ -69,7 +79,8 @@ const projects = [
       "Live result counting for admins",
     ],
     image: online,
-    tags: ["React", "Node.js", "MongoDB"],
+    status: "in-progress",
+    tags: ["React", "Vite", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS"],
     github: "https://github.com/Alok-Jha-creator",
   },
   {
@@ -88,9 +99,38 @@ const projects = [
     github: "https://github.com/Alok-Jha-creator",
   },
 {
+  slug: "ecommerce-backend-api",
+  title: "E-commerce Backend API",
+  subtitle: "BACKEND DEVELOPMENT",
+  description:
+    "A backend-focused e-commerce project built with Node.js and Express.js. It uses MongoDB with Mongoose and PostgreSQL with Sequelize for database operations, JWT for authentication, bcryptjs for password hashing, Cloudinary for image management, Joi for data validation, and Nodemailer for email services.",
+  highlights: [
+    "RESTful API development using Express.js",
+    "JWT-based authentication support",
+    "Password hashing using bcryptjs",
+    "Database integration with MongoDB and PostgreSQL",
+    "Data validation using Joi",
+    "Image upload and management using Cloudinary and Multer",
+    "Email services using Nodemailer",
+    "Environment variable configuration using dotenv"
+  ],
+  image: back,
+  tags: [
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose",
+    "PostgreSQL",
+    "Sequelize",
+    "JWT",
+    "Cloudinary"
+  ],
+  github: "https://github.com/Alok-Jha-creator",
+},
+{
   slug: "bank-management-system",
   title: "Bank Management System",
-  subtitle: "DESKTOP APPLICATION",
+  subtitle: "CONSOLE APPLICATION",
   description:
     "A console-based Bank Management System developed using C++ that allows administrators to manage bank accounts, handle deposits and withdrawals, check account balances, modify account details, and maintain customer records using binary file handling.",
   highlights: [
@@ -124,35 +164,6 @@ const projects = [
   ],
   image: quiz,
   tags: ["C", "Programming", "Console Application", "File Handling"],
-  github: "https://github.com/Alok-Jha-creator",
-},
-{
-  slug: "ecommerce-backend-api",
-  title: "E-commerce Backend API",
-  subtitle: "BACKEND DEVELOPMENT",
-  description:
-    "A backend-focused e-commerce project built with Node.js and Express.js. It uses MongoDB with Mongoose and PostgreSQL with Sequelize for database operations, JWT for authentication, bcryptjs for password hashing, Cloudinary for image management, Joi for data validation, and Nodemailer for email services.",
-  highlights: [
-    "RESTful API development using Express.js",
-    "JWT-based authentication support",
-    "Password hashing using bcryptjs",
-    "Database integration with MongoDB and PostgreSQL",
-    "Data validation using Joi",
-    "Image upload and management using Cloudinary and Multer",
-    "Email services using Nodemailer",
-    "Environment variable configuration using dotenv"
-  ],
-  image: back,
-  tags: [
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Mongoose",
-    "PostgreSQL",
-    "Sequelize",
-    "JWT",
-    "Cloudinary"
-  ],
   github: "https://github.com/Alok-Jha-creator",
 },
 
@@ -221,6 +232,13 @@ function ProjectTile({ project, index, onOpen }) {
           </span>
         )}
 
+        {!project.live && project.status === "in-progress" && (
+          <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 text-xs text-zinc-200 backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+            In progress
+          </span>
+        )}
+
         {/* tala: naam + subtitle (hamesha dekhincha, mobile ma pani) */}
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-linear-to-t from-black/90 via-black/50 to-transparent p-4 pt-20">
           <div className="min-w-0">
@@ -237,6 +255,16 @@ function ProjectTile({ project, index, onOpen }) {
                 {project.title}
               </button>
             </h3>
+            <div className="mt-2 hidden flex-wrap gap-1.5 sm:flex">
+              {project.tags.slice(0, 3).map((t) => (
+                <span
+                  key={t}
+                  className="rounded-md bg-white/10 px-2 py-0.5 text-[11px] text-zinc-200 backdrop-blur"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
 
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all duration-300 group-hover:bg-teal-400 group-hover:text-black">
@@ -257,7 +285,7 @@ function GithubTile() {
       variants={rise}
       whileHover={reduce ? undefined : { y: -6 }}
       transition={spring}
-      href="https://github.com/Alok-Jha-creator"
+      href="https://github.com/Alok-Jha-creator?tab=repositories"
       target="_blank"
       rel="noopener noreferrer"
       className="group flex aspect-16/10 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-white/15 bg-[#0d0d0d]/60 p-6 text-center transition-colors duration-300 hover:border-teal-400/50 focus-visible:outline focus-visible:outline-teal-400"
@@ -429,7 +457,7 @@ export default function Projects() {
             variants={rise}
             className="mx-auto mt-4 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base"
           >
-            Real apps I designed, built and shipped. Click any project for
+            Real apps I designed and built. Click any project for
             details.
           </motion.p>
 
