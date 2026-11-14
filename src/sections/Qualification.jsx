@@ -31,7 +31,7 @@ import WaveBackground from "@/components/WaveBackground";
 const education = [
   {
     title: "Bachelor of Information Technology (BIT)",
-    institution: "Purbanchal University | Aryan College",
+    institution: "Purbanchal University | Aryan School of Engineering and Management",
     duration: "2021 – 2026",
     note: "8 Semesters",
     status: "Completed",
@@ -46,7 +46,7 @@ const education = [
           "Technical Communication",
           "Society and Ethics in IT",
           "Computer Programming in C",
-          "Project I(QUIZ Game)",
+          "Project I (Quiz Game)",
         ],
       },
       {
@@ -57,7 +57,7 @@ const education = [
           "Discrete Structure",
           "Object Oriented Programming in C++",
           "Financial Management and Accounting",
-          "Project II(BMS)",
+          "Project II (Bank Management System)",
         ],
       },
       {
@@ -109,7 +109,7 @@ const education = [
         subjects: [
           "Network Programming",
           "Digital Governance",
-          "Internship (Bussiness Analysist)",
+          "Internship (Business Analyst)",
           "Digital Commerce",
           "Multimedia and Application",
         ],
@@ -127,17 +127,17 @@ const education = [
     ],
   },
   {
-    title: "Higher Secondary (+2 Science / SLC)",
-    institution: "DAV Shushil Kedia College",
-    institution: "Studied physics, chemistry, and mathematics with a strong emphasis on problem-solving and analytical skills.",
+    title: "Higher Secondary Education (+2 Science)",
+    institution: "DAV Shushil Kedia College, Jawalakhel",
+    note: "Studied physics, chemistry, and mathematics with a strong emphasis on problem-solving and analytical skills.",
     duration: "2018 – 2020",
     status: "Completed",
     icon: Award,
   },
   {
     title: "Secondary Education Examination (SEE)",
-    institution: "Durga Secondary School",
-    duration: "2006 – 2017",
+    institution: "Durga Secondary School, Rajbiraj",
+    duration: "2007 – 2017",
     status: "Completed",
     icon: BookOpen,
   },
@@ -268,7 +268,7 @@ export default function Qualification() {
             className="mx-auto mt-2 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base"
           >
             Bachelor of Information Technology, focused on software
-            development,Web Devlopment, databases, and networking, with hands-on training in
+            development, web development, databases, and networking, with hands-on training in
             MERN Stack, CCNA, Business Analysis, and Ethical Hacking.
           </motion.p>
 
