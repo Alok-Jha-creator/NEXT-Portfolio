@@ -11,7 +11,6 @@ export default function About() {
       className="min-h-screen w-full flex items-center justify-center relative bg-black text-white overflow-hidden"
       aria-label="About me"
     >
-      {/* Layered neon background accents */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-10 -left-10 w-7.5 h-7.5 rounded-full bg-linear-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-20 blur-[10px] animate-pulse" />
         <div className="absolute bottom-0 right-10 w-10 h-10 rounded-full bg-linear-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[10px] animate-pulse delay-300" />
@@ -20,7 +19,6 @@ export default function About() {
 
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6 md:px-10 lg:px-12 py-20 flex flex-col gap-12">
         
-        {/* Profile header */}
         <motion.div
           className="flex flex-col md:flex-row items-center md:items-stretch gap-8"
           initial={{ opacity: 0, y: 24 }}
@@ -28,7 +26,6 @@ export default function About() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.4 }}
         >
-          {/* Avatar / Card */}
           <motion.div
             className="relative w-40 h-40 md:w-50 md:h-50 rounded-2xl overflow-hidden shadow-2xl bg-linear-to-br from-[#1CD8D2]/20 to-[#302b63]/20 border border-[#1CD8D2]/25"
             whileHover={{ scale: 1.02 }}
